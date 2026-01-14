@@ -4,6 +4,14 @@
 
 This project demonstrates playing the iconic "Bad Apple" video on a Raspberry Pi Pico 2 (RP2350) using the RISC-V hazard3 cores. It uses an SSD1306 OLED display over I2C and a custom Run-Length Encoding (RLE) format to fit the video into the chip's memory.
 
+## Special Learning Guides
+We've prepared detailed deep-dives into the core concepts used in this project:
+1. [Embedded Rust Setup & RISC-V](docs/01_embedded_rust_setup.md)
+2. [Bad Apple RLE Compression](docs/02_rle_compression.md)
+3. [SSD1306 and I2C Internals](docs/03_ssd1306_i2c.md)
+4. [Performance Tuning](docs/04_performance_tuning.md)
+5. [Special Rust Patterns (Embedded)](docs/05_rust_embedded_patterns.md)
+
 ## Table of Contents
 - [Architecture](#architecture)
 - [How it Works](#how-it-works)

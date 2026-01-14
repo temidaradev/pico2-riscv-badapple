@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
+#
+# Copyright (c) 2021–2024 The rp-rs Developers
+# Copyright (c) 2021 rp-rs organization
+# Copyright (c) 2025 Raspberry Pi Ltd.
+#
+# Cargo Configuration for the https://github.com/rp-rs/rp-hal.git repository.
+#
+# You might want to make a similar file in your own repository if you are
+# writing programs for Raspberry Silicon microcontrollers.
+#
+
+[build]
+target = "riscv32imac-unknown-none-elf"
+
+# Target specific options
+[target.thumbv6m-none-eabi]
+linker = "flip-link"
+rustflags = [
+    "-C",
+    "link-arg=--nmagic",
+    "-C",
+    "link-arg=-Tlink.x",
+    "-C",
+    "link-arg=-Tdefmt.x",
+    "-C",
+    "no-vectorize-loops",
+]
+
+runner = "${PICOTOOL_PATH} load -u -v -x -t elf"
+#runner = "probe-rs run --chip ${CHIP} --protocol swd"
+
+[target.thumbv8m.main-none-eabihf]
+rustflags = [
+    "-C",
+    "link-arg=--nmagic",
+    "-C",
+    "link-arg=-Tlink.x",
+    "-C",
+    "link-arg=-Tdefmt.x",
+    "-C",
+    "target-cpu=cortex-m33",
+]
+
+runner = "${PICOTOOL_PATH} load -u -v -x -t elf"
+#runner = "probe-rs run --chip ${CHIP} --protocol swd"
+
+# registers.
+[target.riscv32imac-unknown-none-elf]
+rustflags = [
+    "-C",
+    "link-arg=--nmagic",
+    "-C",
+    "link-arg=-Trp2350_riscv.x",
+    "-C",
+    "link-arg=-Tdefmt.x",
+]
+
+runner = "picotool load -u -v -x -t elf"
+#runner = "probe-rs run --chip ${CHIP} --protocol swd"
+
+[env]
+DEFMT_LOG = "debug"

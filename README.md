@@ -1,5 +1,7 @@
 # Bad Apple on RP2350 (RISC-V) with SSD1306
 
+![IMG_6729](https://github.com/user-attachments/assets/87fdb751-242b-4b91-9770-496c9ee19e0a)
+
 This project demonstrates playing the iconic "Bad Apple" video on a Raspberry Pi Pico 2 (RP2350) using the RISC-V hazard3 cores. It uses an SSD1306 OLED display over I2C and a custom Run-Length Encoding (RLE) format to fit the video into the chip's memory.
 
 ## Table of Contents

@@ -74,6 +74,6 @@ cargo run
 
 The project is configured to use `opt-level 3` even in debug mode, so `cargo run` will be fast enough for 20 FPS playback.
 
-![Demo Video](https://github.com/user-attachments/assets/fdab9752-14bc-4caf-baf9-2cd7debb56bf)
+https://github.com/user-attachments/assets/fdab9752-14bc-4caf-baf9-2cd7debb56bf
 
 

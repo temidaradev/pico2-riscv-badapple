@@ -30,8 +30,6 @@ const TARGET_FPS: u32 = 20;
 fn main() -> ! {
     info!("Bad Apple on Pico2 RISC-V - Starting");
 
-    server::WiFiServer::new();
-
     let mut pac = hal::pac::Peripherals::take().unwrap();
     let mut watchdog = hal::Watchdog::new(pac.WATCHDOG);
 

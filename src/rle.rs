@@ -1,7 +1,12 @@
 pub const FRAME_SIZE: usize = 1024;
 
 #[inline(always)]
-pub fn put_bytes(frame_buffer: &mut [u8; FRAME_SIZE], byte: u8, count: i32, bytes_written: &mut usize) {
+pub fn put_bytes(
+    frame_buffer: &mut [u8; FRAME_SIZE],
+    byte: u8,
+    count: i32,
+    bytes_written: &mut usize,
+) {
     let count_usize = count as usize;
     let end = (*bytes_written + count_usize).min(FRAME_SIZE);
     frame_buffer[*bytes_written..end].fill(byte);

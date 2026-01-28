@@ -1,5 +1,5 @@
 use embedded_graphics::{image::ImageRaw, pixelcolor::BinaryColor, prelude::*};
-use ssd1306::{prelude::*, I2CDisplayInterface, Ssd1306};
+use ssd1306::{I2CDisplayInterface, Ssd1306, prelude::*};
 
 use crate::rle::FRAME_SIZE;
 

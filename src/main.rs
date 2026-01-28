@@ -4,6 +4,7 @@
 
 mod display;
 mod rle;
+mod server;
 
 use defmt::*;
 use defmt_rtt as _;
@@ -15,7 +16,7 @@ use hal::entry;
 use rp235x_hal as hal;
 
 use crate::display::{init_display, render_frame};
-use crate::rle::{RleDecoder, FRAME_SIZE};
+use crate::rle::{FRAME_SIZE, RleDecoder};
 
 #[unsafe(link_section = ".start_block")]
 #[used]
@@ -28,7 +29,9 @@ const TARGET_FPS: u32 = 20;
 #[entry]
 fn main() -> ! {
     info!("Bad Apple on Pico2 RISC-V - Starting");
-    
+
+    server::WiFiServer::new();
+
     let mut pac = hal::pac::Peripherals::take().unwrap();
     let mut watchdog = hal::Watchdog::new(pac.WATCHDOG);
 

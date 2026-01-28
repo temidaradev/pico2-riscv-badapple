@@ -4,7 +4,6 @@
 
 mod display;
 mod rle;
-mod server;
 
 use defmt::*;
 use defmt_rtt as _;
